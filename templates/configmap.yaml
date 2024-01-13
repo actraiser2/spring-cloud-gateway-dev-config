@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: spring-cloud-gateway
+data:
+  application.yaml: |-
+    server:
+      port: 8080
+    spring:
+      cloud:
+        gateway:
+          routes:
+           - id: codechallenge
+             uri: http://localhost:8080
+             predicates:
+               - Path=/codechallenge/**
+            filters:
+               - StripPrefix=1
+    
+    management:
+      server:
+        port: 8081
+      endpoints:
+        web:
+          base-path: /management
+           
+    logging:
+      level:
+        org.springframework.cloud.gateway.handler.predicate: trace
+  
