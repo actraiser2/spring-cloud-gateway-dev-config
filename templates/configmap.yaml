@@ -11,12 +11,12 @@ data:
       cloud:
         gateway:
           routes:
-           - id: codechallenge
-             uri: http://localhost:8080
-             predicates:
-               - Path=/codechallenge/**
-            filters:
-               - StripPrefix=1
+            - id: codechallenge
+              uri: http://localhost:8080
+              predicates:
+              - Path=/codechallenge/**
+              filters:
+                - StripPrefix=1
     
     management:
       server:
@@ -24,7 +24,7 @@ data:
       endpoints:
         web:
           base-path: /management
-           
+               
     logging:
       level:
         org.springframework.cloud.gateway.handler.predicate: trace
