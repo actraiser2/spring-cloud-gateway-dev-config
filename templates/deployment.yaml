@@ -29,7 +29,7 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          command: "/bin/sh"
+          command: ["/bin/sh"]
           args: ["-c", "sleep 10000"]
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
@@ -54,10 +54,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: spring-cloud-gateway-volume
-              mountPath: /app/config
+              mountPath: /app/config/application.yaml
+              subPath: application.yaml
       volumes:
         - name: spring-cloud-gateway-volume
-          configmap:
+          configMap:
             name: spring-cloud-gateway
       {{- with .Values.nodeSelector }}
       nodeSelector:
