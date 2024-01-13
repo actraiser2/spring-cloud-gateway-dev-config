@@ -25,6 +25,9 @@ data:
       endpoints:
         web:
           base-path: /management
+          exposure:
+            include:
+              - "*"
                
     logging:
       level:
