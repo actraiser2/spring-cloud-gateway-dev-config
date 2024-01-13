@@ -50,6 +50,13 @@ spec:
               port: http-management
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: spring-cloud-gateway-volume
+              mountPath: /app/config
+      volumes:
+        - name: spring-cloud-gateway-volume
+          configmap:
+            name: spring-cloud-gateway
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
