@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   name: spring-cloud-gateway
 data:
+  prueba: sss
   application.yaml: |-
     server:
       port: 8080
