@@ -45,7 +45,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /management/health
-              port: http
+              port: http-management
           readinessProbe:
             httpGet:
               path: /management/health
