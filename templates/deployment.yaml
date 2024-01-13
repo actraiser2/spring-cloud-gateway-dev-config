@@ -30,8 +30,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           command: sleep
-          args: 
-            - 1000000
+          args: ["10000"]
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
