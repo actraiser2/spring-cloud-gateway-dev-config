@@ -13,7 +13,7 @@ data:
         gateway:
           routes:
             - id: codechallenge
-              uri: http://localhost:8080
+              uri: http://codechallenge2:8080
               predicates:
               - Path=/codechallenge/**
               filters:
