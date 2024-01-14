@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "spring-cloud-gateway-dev-config.labels" . | nindent 4 }}
   annotations:
-    checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+    reloader.stakater.com/auto: "true"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
