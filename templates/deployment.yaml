@@ -4,6 +4,9 @@ metadata:
   name: {{ include "spring-cloud-gateway-dev-config.fullname" . }}
   labels:
     {{- include "spring-cloud-gateway-dev-config.labels" . | nindent 4 }}
+  annotations:
+    annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
