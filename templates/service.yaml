@@ -11,5 +11,9 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    - port: {{ .Values.service.managementport }}
+      targetPort: http-management
+      protocol: TCP
+      name: httpmanagement
   selector:
     {{- include "spring-cloud-gateway-dev-config.selectorLabels" . | nindent 4 }}
