@@ -27,7 +27,7 @@ data:
             - id: default
               uri: https://seguro.santalucia.es/
               predicates:
-                - path=/**
+                - Path=/**
               
     
     management:
