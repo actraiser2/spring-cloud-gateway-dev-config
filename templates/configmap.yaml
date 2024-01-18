@@ -24,6 +24,11 @@ data:
                 - Path=/codechallenge2/**
               filters:
                 - StripPrefix=1
+            - id: default
+              uri: https://seguro.santalucia.es/
+              predicates:
+                - path=/**
+              
     
     management:
       server:
