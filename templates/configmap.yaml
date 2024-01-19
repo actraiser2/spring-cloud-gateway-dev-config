@@ -18,10 +18,10 @@ data:
               - Path=/codechallenge/**
               filters:
                 - StripPrefix=1
-            - id: codechallenge2 
-              uri: http://codechallenge2:8080
+            - id: codechallenge-management 
+              uri: http://codechallenge:8081
               predicates:
-                - Path=/codechallenge2/**
+                - Path=/codechallenge-management/**
               filters:
                 - StripPrefix=1
             - id: default
