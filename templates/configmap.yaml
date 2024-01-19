@@ -41,7 +41,7 @@ data:
               - "*"
       endpoint:
         health: 
-          show-details: true
+          show-details: always
                
     logging:
       level:
