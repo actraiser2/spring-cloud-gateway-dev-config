@@ -39,6 +39,9 @@ data:
           exposure:
             include:
               - "*"
+      endpoint:
+        health: 
+          show-details: true
                
     logging:
       level:
