@@ -12,16 +12,16 @@ data:
       cloud:
         gateway:
           routes:
+            - id: codechallenge-management 
+              uri: http://codechallenge2:8081
+              predicates:
+                - Path=/codechallenge/management/**
+              filters:
+                - StripPrefix=1
             - id: codechallenge
               uri: http://codechallenge2:8080
               predicates:
               - Path=/codechallenge/**
-              filters:
-                - StripPrefix=1
-            - id: codechallenge-management 
-              uri: http://codechallenge:8081
-              predicates:
-                - Path=/codechallenge-management/**
               filters:
                 - StripPrefix=1
             - id: default
