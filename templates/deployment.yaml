@@ -56,7 +56,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: spring-cloud-gateway-volume
-              mountPath: /app/config/application.yaml
+              mountPath: /config/application.yaml
               subPath: application.yaml
       volumes:
         - name: spring-cloud-gateway-volume
